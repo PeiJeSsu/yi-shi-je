@@ -28,6 +28,7 @@ export default function ApplyList() {
                     });
                     setApplications(sortedApplications);
                 } else {
+                    console.log(response);
                     console.error('The response data is not an array:', response.data);
                 }
             })
