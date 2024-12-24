@@ -8,7 +8,7 @@ const DisplayIsBanned = ({ userEmail, isBanned, setIsBanned, displayReload, setD
     useEffect(() => {
         const fetchUserStatus = async () => {
             try {
-                const response = await axios.get(`/api/users/${userEmail}`);
+                const response = await axios.get(`https://classroomreservationbackend.onrender.com/api/users/${userEmail}`);
                 if (response.status === 200) {
                     const { isBanned, unbanTime } = response.data;
                     setIsBanned(isBanned);

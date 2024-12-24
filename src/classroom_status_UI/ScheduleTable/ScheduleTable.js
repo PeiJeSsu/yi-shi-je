@@ -13,7 +13,7 @@ function ScheduleTable({ currentDate, selectedFloor, selectedRoomNumber }) {
         if (selectedFloor && selectedRoomNumber && currentDate) {
             const { start, end } = getWeekRange(currentDate);
 
-            axios.get('/api/classroom_apply/search', {
+            axios.get('https://classroomreservationbackend.onrender.com/api/classroom_apply/search', {
                 params: {
                     floor: selectedFloor,
                     roomNumber: selectedRoomNumber,

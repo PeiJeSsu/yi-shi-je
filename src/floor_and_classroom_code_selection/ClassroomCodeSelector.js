@@ -9,7 +9,7 @@ export default function ClassroomCodeSelector({ floor, classroomCode, setClassro
         const fetchClassrooms = async () => {
             if (floor) {
                 try {
-                    const response = await axios.get(`/classroom_build/floor/${floor}`);
+                    const response = await axios.get(`https://classroomreservationbackend.onrender.com/classroom_build/floor/${floor}`);
                     const codes = response.data.map((classroom) => classroom.roomNumber);
                     setClassroomCodes(['全部', ...codes]);
                 } catch (error) {

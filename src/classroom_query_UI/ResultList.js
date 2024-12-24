@@ -22,7 +22,7 @@ export default function ResultList({ floor, classroomCode, reload, setReload, is
                 } else if (floor) {
                     url = `/classroom_build/floor/${floor}`;
                 }
-                const response = await axios.get(url);
+                const response = await axios.get('https://classroomreservationbackend.onrender.com' + url);
                 const classroomData = Array.isArray(response.data) ? response.data : [response.data];
                 setClassrooms(classroomData);
                 console.log(classroomData);

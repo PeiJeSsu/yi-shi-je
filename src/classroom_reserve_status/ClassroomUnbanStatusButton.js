@@ -5,7 +5,7 @@ import axios from 'axios';
 const UnbanClassroomButton = ({ initialClassroomCode, isBanned, setReload }) => {
     const handleUnban = async () => {
         try {
-            const response = await axios.patch(`/classroom_build/${initialClassroomCode}/unban`);
+            const response = await axios.patch(`https://classroomreservationbackend.onrender.com/classroom_build/${initialClassroomCode}/unban`);
             if (response.status === 200) {
                 alert('教室解禁成功');
                 setReload(true);

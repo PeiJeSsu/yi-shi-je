@@ -6,7 +6,7 @@ const UnBanUserButton = ({ user, setReload }) => {
 
     const handleUnban = async () => {
         try {
-            const response = await axios.patch(`/api/users/${user.email}/unban`);
+            const response = await axios.patch(`https://classroomreservationbackend.onrender.com/api/users/${user.email}/unban`);
             if (response.status === 200) {
                 alert('使用者解禁成功');
                 setReload(true);

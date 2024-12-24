@@ -52,7 +52,7 @@ const UpdateKeyStatus = ({ open, onClose, classroomId, initialFloor, initialClas
                     borrowerRole: inputBorrower.role
                 })
             };
-            const response = await axios.patch(url, null, { params });
+            const response = await axios.patch('https://classroomreservationbackend.onrender.com' + url, null, { params });
             if (response.status === 200) {
                 alert('鑰匙狀態更新成功');
                 setReload(true);

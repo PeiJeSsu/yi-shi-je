@@ -8,7 +8,7 @@ function FloorRoomSelector({ floor, setFloor, room, setRoom }) {
     const [rooms, setRooms] = useState([]);
 
     useEffect(() => {
-        axios.get('/classroom_build/all')
+        axios.get('https://classroomreservationbackend.onrender.com/classroom_build/all')
             .then((response) => {
                 setClassrooms(response.data);
                 const uniqueFloors = [...new Set(response.data.map(classroom => classroom.floor))];

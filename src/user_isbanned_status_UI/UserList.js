@@ -11,7 +11,7 @@ export default function UserList({ user, reload, setReload }) {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('api/users/allUsers');
+                const response = await axios.get('https://classroomreservationbackend.onrender.com/api/users/allUsers');
                 setUsers(response.data);
             } catch (error) {
                 console.error("Error fetching user data", error);

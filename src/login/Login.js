@@ -32,7 +32,7 @@ function Login() {
             }
 
             try {
-                const response = await axios.post("/api/users/role", {email: user.email}, {
+                const response = await axios.post("https://classroomreservationbackend.onrender.com/api/users/role", {email: user.email}, {
                     headers: {
                         "Content-Type": "application/json",
                     },
@@ -76,7 +76,7 @@ function Login() {
             const user = result.user;
 
             try {
-                const response = await axios.get(`/api/users/${user.email}`, {
+                const response = await axios.get(`https://classroomreservationbackend.onrender.com/api/users/${user.email}`, {
                     headers: {
                         "Content-Type": "application/json",
                     },
@@ -119,7 +119,7 @@ function Login() {
         }
 
         try {
-            await axios.post("/api/users/register", {
+            await axios.post("https://classroomreservationbackend.onrender.com/api/users/register", {
                 email: email,
                 role: selectedRole,
             }, {

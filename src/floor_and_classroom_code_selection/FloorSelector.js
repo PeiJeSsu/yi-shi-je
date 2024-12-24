@@ -8,7 +8,7 @@ export default function FloorSelector({ floor, setFloor, setClassroomCode }) {
     useEffect(() => {
         const fetchFloors = async () => {
             try {
-                const response = await axios.get('/classroom_build/floors');
+                const response = await axios.get('https://classroomreservationbackend.onrender.com/classroom_build/floors');
                 setFloors(['全部', ...response.data]);
             } catch (error) {
                 console.error('Error fetching floors:', error);

@@ -52,7 +52,7 @@ function Register() {
 
             await sendEmailVerification(user);
 
-            await axios.post("/api/users/register",
+            await axios.post("https://classroomreservationbackend.onrender.com/api/users/register",
                 { email: registrationEmail, role },
                 { headers: { "Content-Type": "application/json" } }
             );

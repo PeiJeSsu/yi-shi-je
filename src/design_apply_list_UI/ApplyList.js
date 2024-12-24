@@ -46,7 +46,7 @@ export default function ApplyList() {
 
     const showHistory = async (borrower) => {
         try {
-            const response = await axios.get(`/api/classroom_apply/borrower/${borrower}`);
+            const response = await axios.get(`https://classroomreservationbackend.onrender.com/api/classroom_apply/borrower/${borrower}`);
             const transformedData = response.data.map((item) => ({
                 user: item.borrower,
                 classroom: item.classroom,

@@ -49,7 +49,7 @@ const ClassroomBanStatus = ({ open, onClose, initialFloor, initialClassroomCode,
 
             const unbanTime = calculateBanDuration();
 
-            const response = await axios.patch(`/classroom_build/${classroomCode}/ban`, null, {
+            const response = await axios.patch(`https://classroomreservationbackend.onrender.com/classroom_build/${classroomCode}/ban`, null, {
                 params: { unbanTime },
             });
 

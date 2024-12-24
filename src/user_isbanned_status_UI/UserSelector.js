@@ -6,7 +6,7 @@ const UserSelector = ({ user, setUser, disabled }) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/users/allUsers')
+        axios.get('https://classroomreservationbackend.onrender.com/api/users/allUsers')
             .then(response => {
                 const sortedUsers = response.data.sort((a, b) => {
                     if (a.role !== b.role)

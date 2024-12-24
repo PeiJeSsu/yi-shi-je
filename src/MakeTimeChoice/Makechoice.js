@@ -68,7 +68,7 @@ const Makechoice = ({open, onClose, initialFloor, initialClassroomCode, setDispl
             // console.log("borrower userEmail", userEmail);
             console.log(startTime.toISOString(), endTime.toISOString());
 
-            const response = await axios.post('/api/classroom_apply/apply', null, { params });
+            const response = await axios.post('https://classroomreservationbackend.onrender.com/api/classroom_apply/apply', null, { params });
 
             if (response.status === 200) {
                 const responseData = response.data;

@@ -11,7 +11,7 @@ export default function Query_information_interface() {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        axios.get("/api/classroom_apply")
+        axios.get("https://classroomreservationbackend.onrender.com/api/classroom_apply")
             .then((response) => {
                 if (response.status !== 200) {
                     throw new Error("Network response was not ok");

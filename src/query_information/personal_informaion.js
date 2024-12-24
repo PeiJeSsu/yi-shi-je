@@ -12,7 +12,7 @@ export default function PersonalInformation() {
         console.log("Logged in userName: ", userName);
 
         if (userName) {
-            axios.get(`/api/classroom_apply/borrower/${userName}`)
+            axios.get(`https://classroomreservationbackend.onrender.com/api/classroom_apply/borrower/${userName}`)
                 .then((response) => {
                     if (response.status !== 200) {
                         throw new Error("Network response was not ok");

@@ -39,7 +39,7 @@ const ExportScheduleButton = ({ classroom }) => {
             const startDate = selectedMonday.format('YYYY-MM-DDTHH:mm:ss');
             const endDate = selectedMonday.add(4, 'day').endOf('day').format('YYYY-MM-DDTHH:mm:ss');
 
-            const response = await axios.get('/api/classroom_apply/search', {
+            const response = await axios.get('https://classroomreservationbackend.onrender.com/api/classroom_apply/search', {
                 params: {
                     floor: classroom.floor,
                     roomNumber: classroom.roomNumber,
