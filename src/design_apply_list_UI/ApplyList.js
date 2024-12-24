@@ -15,7 +15,7 @@ export default function ApplyList() {
 
     useEffect(() => {
         axios
-            .get('/api/classroom_apply/pending')
+            .get('https://classroomreservationbackend.onrender.com/api/classroom_apply/pending')
             .then((response) => {
                 console.log('API Response:', response);
                 if (Array.isArray(response.data)) {
@@ -75,7 +75,7 @@ export default function ApplyList() {
 
     const handleApprove = (id) => {
         axios
-            .put(`/api/classroom_apply/${id}/approve`)
+            .put(`https://classroomreservationbackend.onrender.com/api/classroom_apply/${id}/approve`)
             .then(() => {
                 setReload((prev) => !prev);
             })
@@ -87,7 +87,7 @@ export default function ApplyList() {
     const handleDeny = (id, reason) => {
         console.log("Reason:", reason);
         axios
-            .put(`/api/classroom_apply/${id}/deny`, {reason})
+            .put(`https://classroomreservationbackend.onrender.com/api/classroom_apply/${id}/deny`, {reason})
             .then(() => {
                 setReload((prev) => !prev);
             })
