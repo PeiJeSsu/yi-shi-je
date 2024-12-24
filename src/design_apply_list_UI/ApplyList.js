@@ -17,14 +17,19 @@ export default function ApplyList() {
         axios
             .get('/api/classroom_apply/pending')
             .then((response) => {
-                const sortedApplications = response.data.sort((a, b) => {
-                    const floorOrder = ['B1', '1', '2', '3', '4'];
-                    if (a.floor !== b.floor) {
-                        return floorOrder.indexOf(a.floor) - floorOrder.indexOf(b.floor);
-                    }
-                    return a.classroom.localeCompare(b.classroom);
-                });
-                setApplications(sortedApplications);
+                console.log('API Response:', response);
+                if (Array.isArray(response.data)) {
+                    const sortedApplications = response.data.sort((a, b) => {
+                        const floorOrder = ['B1', '1', '2', '3', '4'];
+                        if (a.floor !== b.floor) {
+                            return floorOrder.indexOf(a.floor) - floorOrder.indexOf(b.floor);
+                        }
+                        return a.classroom.localeCompare(b.classroom);
+                    });
+                    setApplications(sortedApplications);
+                } else {
+                    console.error('The response data is not an array:', response.data);
+                }
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
